@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://brcfjssdqjdte"]
+
+[ext_resource type="Script" uid="uid://pof672wmqm7o" path="res://Scripts/level_select.gd" id="1_nkys2"]
+[ext_resource type="Texture2D" uid="uid://duklqma8t4pha" path="res://Added_Sprites/Level_Menu.png" id="2_lx4vd"]
+
+[node name="LevelSelect" type="Node2D"]
+script = ExtResource("1_nkys2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576.24994, 324.25)
+scale = Vector2(3.598437, 3.597222)
+texture = ExtResource("2_lx4vd")
+
+[node name="Level1" type="TextureButton" parent="."]
+offset_left = 228.0
+offset_top = 239.0
+offset_right = 403.0
+offset_bottom = 409.0
+
+[node name="Level2" type="TextureButton" parent="."]
+offset_left = 490.0
+offset_top = 238.0
+offset_right = 666.0
+offset_bottom = 411.0
+
+[node name="Level3" type="TextureButton" parent="."]
+offset_left = 742.0
+offset_top = 238.0
+offset_right = 918.0
+offset_bottom = 410.0
+
+[connection signal="pressed" from="Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Level3" to="." method="_on_level_3_pressed"]
