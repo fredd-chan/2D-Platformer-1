@@ -1,22 +1,32 @@
 [gd_scene format=3 uid="uid://ds75lvm8eqf4l"]
 
 [ext_resource type="Texture2D" uid="uid://bknmylipolfwc" path="res://Added_Sprites/Lv1_Bg.png" id="1_6ioyp"]
+[ext_resource type="Texture2D" uid="uid://b2rdd52pwkypl" path="res://Added_Sprites/Lvl1_BG2.png" id="2_u0op5"]
 [ext_resource type="PackedScene" uid="uid://cwc6ii3wggiur" path="res://Scenes/transition.tscn" id="3_gcla0"]
+[ext_resource type="Texture2D" uid="uid://djx6nijqh4ito" path="res://Added_Sprites/Fire1.png" id="3_ts4pv"]
 [ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="3_xfk5q"]
+[ext_resource type="Texture2D" uid="uid://cqcje0gx818m0" path="res://Added_Sprites/Fire2.png" id="4_7sml1"]
 [ext_resource type="Texture2D" uid="uid://b8vc7j82b8ktc" path="res://Added_Sprites/Lv1_Tile.png" id="4_oovug"]
+[ext_resource type="Texture2D" uid="uid://cv0s5kojbkc4f" path="res://Added_Sprites/Fire3.png" id="5_bd6hb"]
 [ext_resource type="Texture2D" uid="uid://b3re427v4n4j8" path="res://Added_Sprites/Press_E.png" id="6_6ioyp"]
+[ext_resource type="Texture2D" uid="uid://c5j43qhp2oudp" path="res://Added_Sprites/Fire4.png" id="6_x68w5"]
 [ext_resource type="Texture2D" uid="uid://cek7cxh0beb4b" path="res://Added_Sprites/Hold_W.png" id="7_oovug"]
+[ext_resource type="Texture2D" uid="uid://cy8gw6futpf2t" path="res://Added_Sprites/Fire5.png" id="7_vyomg"]
 [ext_resource type="Texture2D" uid="uid://dq6utv0gm6wkw" path="res://Added_Sprites/Double_Jump.png" id="8_8i23i"]
+[ext_resource type="Texture2D" uid="uid://cfwlhpwmcjaff" path="res://Added_Sprites/Fire6.png" id="8_xcdlm"]
 [ext_resource type="Texture2D" uid="uid://b483xccwtpcxv" path="res://Added_Sprites/Careful.png" id="9_8yhm2"]
+[ext_resource type="Texture2D" uid="uid://cy66nq1ya6p5l" path="res://Added_Sprites/Fire7.png" id="9_bvyvf"]
+[ext_resource type="Script" uid="uid://b28xxquxt84d8" path="res://Scripts/Flame.gd" id="10_7sml1"]
 [ext_resource type="PackedScene" uid="uid://cobdutl77vyns" path="res://Scenes/rope.tscn" id="10_af3po"]
 [ext_resource type="PackedScene" uid="uid://d055voyrwqpkw" path="res://Scenes/player_2.tscn" id="10_chwpn"]
 [ext_resource type="Texture2D" uid="uid://dqnu3qage114p" path="res://Added_Sprites/Lvl1_top.png" id="10_oovug"]
-[ext_resource type="AudioStream" uid="uid://nkcsldx776w5" path="res://Added_Sprites/Lvl_1.wav" id="12_uy8f0"]
+[ext_resource type="AudioStream" uid="uid://nkcsldx776w5" path="res://Audio/Lvl_1.wav" id="12_uy8f0"]
 [ext_resource type="Texture2D" uid="uid://bwch3b3vq4wy3" path="res://Added_Sprites/Shadows.png" id="14_6ioyp"]
 [ext_resource type="Script" uid="uid://dfmhqng24hc1a" path="res://Scripts/trigger.gd" id="16_8i23i"]
 [ext_resource type="Texture2D" uid="uid://cmyi4xau1mca6" path="res://Added_Sprites/Lever1.png" id="16_gcla0"]
 [ext_resource type="Script" uid="uid://ceh7wys33f8x1" path="res://Scripts/dialogue_trigger.gd" id="17_8yhm2"]
 [ext_resource type="Texture2D" uid="uid://wdxery3v6r4x" path="res://Added_Sprites/Lever2.png" id="17_vr6f4"]
+[ext_resource type="Script" uid="uid://m1gpniolcoqy" path="res://Scripts/KillZone.gd" id="18_bd6hb"]
 [ext_resource type="Script" uid="uid://b7ks1v2eg76i5" path="res://Scripts/npc.gd" id="18_pjppf"]
 [ext_resource type="Texture2D" uid="uid://bn52gw8g3115i" path="res://Added_Sprites/Lever3.png" id="18_u5cqy"]
 [ext_resource type="Texture2D" uid="uid://e4vj2bkhfkow" path="res://Added_Sprites/Lever4.png" id="19_u0op5"]
@@ -26,9 +36,45 @@
 [ext_resource type="Texture2D" uid="uid://c6hon30pqdyrm" path="res://Added_Sprites/P_Interact.png" id="22_u5cqy"]
 [ext_resource type="PackedScene" uid="uid://v4y3k3nglc6a" path="res://Scenes/end_flag.tscn" id="22_vr6f4"]
 [ext_resource type="Texture2D" uid="uid://cllitohomx438" path="res://Added_Sprites/Respawn.png" id="27_u0op5"]
+[ext_resource type="Texture2D" uid="uid://cfssgkenceyu0" path="res://Added_Sprites/NPC.png" id="28_1f27d"]
+[ext_resource type="Texture2D" uid="uid://cxdmijbh3lix7" path="res://Added_Sprites/Vines.png" id="38_x68w5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0op5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ts4pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7sml1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bd6hb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x68w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vyomg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xcdlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bvyvf")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8yhm2"]
-size = Vector2(3, 12)
+size = Vector2(14, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pm77i"]
 animations = [{
@@ -63,6 +109,15 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjppf"]
 size = Vector2(58, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x68w5"]
+size = Vector2(263, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bd6hb"]
+size = Vector2(2054, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vyomg"]
+size = Vector2(11.053619, 130.39377)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ssoq"]
 size = Vector2(71, 57)
@@ -1461,13 +1516,26 @@ sources/0 = SubResource("TileSetAtlasSource_8i23i")
 position = Vector2(553, -31)
 texture = ExtResource("1_6ioyp")
 
+[node name="Lvl1Bg2" type="Sprite2D" parent="." unique_id=951614698]
+position = Vector2(623, 33)
+texture = ExtResource("2_u0op5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=469548782]
+position = Vector2(605, 90.00001)
+scale = Vector2(0.9, 0.9)
+sprite_frames = SubResource("SpriteFrames_u0op5")
+animation = &"Idle"
+frame_progress = 0.92823845
+speed_scale = 1.4
+script = ExtResource("10_7sml1")
+
 [node name="Puzzles" type="Node" parent="." unique_id=1825094609]
 
 [node name="Trigger" type="Area2D" parent="Puzzles" unique_id=1199795172]
 script = ExtResource("16_8i23i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puzzles/Trigger" unique_id=1442633509]
-position = Vector2(246, 268)
+position = Vector2(246, 266)
 shape = SubResource("RectangleShape2D_8yhm2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Puzzles/Trigger" unique_id=2138983220]
@@ -1485,23 +1553,65 @@ rotation = 0.1605703
 shape = SubResource("RectangleShape2D_pjppf")
 disabled = true
 
+[node name="ColorRect" type="ColorRect" parent="Puzzles/Platform" unique_id=1093529484]
+offset_left = 152.00002
+offset_top = -130.00003
+offset_right = 210.00002
+offset_bottom = -120.00003
+rotation = 0.17453292
+
 [node name="Rope" parent="Puzzles" unique_id=617449430 instance=ExtResource("10_af3po")]
 position = Vector2(320, 97)
+
+[node name="DIE" type="Node" parent="." unique_id=869998946]
+
+[node name="KillZone" type="Area2D" parent="DIE" unique_id=1278312625]
+script = ExtResource("18_bd6hb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DIE/KillZone" unique_id=1670758205]
+position = Vector2(-48.5, 4)
+shape = SubResource("RectangleShape2D_x68w5")
+
+[node name="Area2D" type="Area2D" parent="DIE" unique_id=1609786743]
+script = ExtResource("18_bd6hb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DIE/Area2D" unique_id=1425031661]
+position = Vector2(559, 342.5)
+shape = SubResource("RectangleShape2D_bd6hb")
+
+[node name="Area2D2" type="Area2D" parent="DIE" unique_id=535236868]
+script = ExtResource("18_bd6hb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DIE/Area2D2" unique_id=63906961]
+position = Vector2(-100.99999, -129.99998)
+rotation = 1.5184364
+shape = SubResource("RectangleShape2D_vyomg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DIE/Area2D2" unique_id=1366734766]
+position = Vector2(30, -133)
+rotation = 1.6057029
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_vyomg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DIE/Area2D2" unique_id=1180230779]
+position = Vector2(154.99998, -115.999985)
+rotation = 1.8325957
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_vyomg")
 
 [node name="NPC" type="Node" parent="." unique_id=1155199113]
 
 [node name="NPC" type="Area2D" parent="NPC" unique_id=1565529054]
 script = ExtResource("18_pjppf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/NPC" unique_id=547334239]
-position = Vector2(565.5, 109.5)
-shape = SubResource("RectangleShape2D_6ssoq")
+[node name="Npc" type="Sprite2D" parent="NPC/NPC" unique_id=995291550]
+position = Vector2(518, 91)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("28_1f27d")
 
-[node name="ColorRect" type="ColorRect" parent="NPC/NPC" unique_id=837138729]
-offset_left = 477.0
-offset_top = 73.0
-offset_right = 517.0
-offset_bottom = 113.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC/NPC" unique_id=547334239]
+position = Vector2(604, 109)
+shape = SubResource("RectangleShape2D_6ssoq")
 
 [node name="MovingPlatform" type="StaticBody2D" parent="NPC" unique_id=1372742425]
 visible = false
@@ -1718,9 +1828,14 @@ grow_vertical = 0
 text = "Press E to continue"
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=1509072348 groups=["SpawnPoint"]]
-position = Vector2(-413, -85)
+position = Vector2(-407, -83)
 
 [node name="Sprites" type="Node" parent="." unique_id=115729556]
+
+[node name="Respawn" type="Sprite2D" parent="Sprites" unique_id=1581788557]
+position = Vector2(557, -85)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("27_u0op5")
 
 [node name="PressE" type="Sprite2D" parent="Sprites" unique_id=661794807]
 position = Vector2(376, -92)
@@ -1799,7 +1914,7 @@ jump_force = 210.0
 lock_x_on_ladder = true
 
 [node name="Player2" parent="." unique_id=514404792 instance=ExtResource("10_chwpn")]
-position = Vector2(-400, -79)
+position = Vector2(-384, -79)
 jump_force = 180.0
 input_respawn = "respawn_p2"
 double_jump = true
@@ -1807,7 +1922,6 @@ input_up = "climb_up_p2"
 input_down = "climb_dow0_p2n"
 lock_x_on_ladder = true
 
-[node name="Respawn" type="Sprite2D" parent="." unique_id=1581788557]
-position = Vector2(557, -85)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("27_u0op5")
+[node name="Vines" type="Sprite2D" parent="." unique_id=24529336]
+position = Vector2(560, -25)
+texture = ExtResource("38_x68w5")

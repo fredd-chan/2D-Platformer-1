@@ -28,7 +28,7 @@ var frozen : bool = false
 @onready var sprite : Sprite2D = $Sprite
 @onready var anim : AnimationPlayer = $AnimationPlayer
 @onready var audio : AudioStreamPlayer2D = $AudioStreamPlayer2D
-@export var jump_sfx : AudioStream = preload("res://Added_Sprites/Jump_sound.wav")
+@export var jump_sfx : AudioStream = preload("res://Audio/Jump_sound.wav")
 var take_damage_sfx : AudioStream = preload("res://Audio/take_damage.wav")
 var coin_sfx : AudioStream = preload("res://Audio/coin.wav")
 

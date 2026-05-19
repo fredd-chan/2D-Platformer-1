@@ -4,12 +4,12 @@ extends Node
 	"1": {
 		viewport = $"HBoxContainer/SubViewportContainer/SubViewport",
 		camera = $"HBoxContainer/SubViewportContainer/SubViewport/Camera2D",
-		player = $HBoxContainer/SubViewportContainer/SubViewport/Main/Player
+		player = $HBoxContainer/SubViewportContainer/SubViewport/Node2D/Player
 	},
 	"2": {
 		viewport = $"HBoxContainer/SubViewportContainer2/SubViewport",
 		camera = $"HBoxContainer/SubViewportContainer2/SubViewport/Camera2D",
-		player = $HBoxContainer/SubViewportContainer/SubViewport/Main/Player2
+		player = $HBoxContainer/SubViewportContainer/SubViewport/Node2D/Player2
 	}
 }
 func _ready() -> void:

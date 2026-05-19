@@ -16,6 +16,7 @@ var chest_opened : bool = false
 var current_line : int = 0
 var dialogue_lines = [
 	{"speaker": "Sprig", "text": "What's this?"},
+	{"speaker": "Sprig", "text": "What's this?"},
 	{"speaker": "Pluh", "text": "Maybe treasure!"},
 	{"speaker": "Sprig", "text": "...A seed?"},
 	{"speaker": "Pluh", "text": "What does it do?"},

@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://nkcsldx776w5"
-path="res://.godot/imported/Lvl_1.wav-78b0c080ef95c135d47615977a7fc9aa.sample"
+uid="uid://do163ejo2ts3d"
+path="res://.godot/imported/BossMusic.wav-5ef21c7ff95204a930fad2c13ec52927.sample"
 
 [deps]
 
-source_file="res://Added_Sprites/Lvl_1.wav"
-dest_files=["res://.godot/imported/Lvl_1.wav-78b0c080ef95c135d47615977a7fc9aa.sample"]
+source_file="res://Audio/BossMusic.wav"
+dest_files=["res://.godot/imported/BossMusic.wav-5ef21c7ff95204a930fad2c13ec52927.sample"]
 
 [params]
 

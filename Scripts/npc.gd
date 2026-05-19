@@ -17,14 +17,15 @@ var cooldown_timer : float = 0.0
 var can_retry : bool = false
 
 var dialogue_lines = [
-	{"speaker": "NPC", "text": "Ah, travelers..."},
-	{"speaker": "NPC", "text": "I haven't seen any like you since..."},
-	{"speaker": "NPC", "text": "...Nevermind."},
-	{"speaker": "NPC", "text": "Please save us, brave travelers."},
-	{"speaker": "NPC", "text": "We need your help."},
-	{"speaker": "NPC", "text": "If you don't, we will all die."},
-	{"speaker": "NPC", "text": "Here.. I will show you the way."},
-	{"speaker": "NPC", "text": "Go, and live on, even if you cannot save us."},
+	{"speaker": "???", "text": "Ah, travelers..."},
+	{"speaker": "???", "text": "I haven't seen any like you since..."},
+	{"speaker": "???", "text": "...Nevermind."},
+	{"speaker": "???", "text": "My name is Wyllis."},
+	{"speaker": "Wyllis", "text": "Please save us, brave travelers."},
+	{"speaker": "Wyllis", "text": "We need your help."},
+	{"speaker": "Wyllis", "text": "If you don't, we will all die."},
+	{"speaker": "Wyllis", "text": "Here.. I will show you the way."},
+	{"speaker": "Wyllis", "text": "Go, and live on, even if you cannot save us."},
 ]
 
 var retry_lines = [
@@ -114,6 +115,8 @@ func _respawn_platform(needs_both : bool):
 func finish_retry():
 	dialogue_box.visible = false
 	continue_label.visible = false
+	for p in get_tree().get_nodes_in_group("Player"):
+		p.unfreeze()
 	dialogue_finished = true
 	is_retry = false
 	can_retry = false
