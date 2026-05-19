@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bbeu30l028w24"]
+
+[ext_resource type="Script" uid="uid://cu7w1as0sro4t" path="res://Bullet.gd" id="1_14k46"]
+[ext_resource type="Texture2D" uid="uid://bvkn2v5r8xnob" path="res://Sprites/Objects/bullet.png" id="2_qvus8"]
+[ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="3_qvus8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pypll"]
+radius = 5.0
+height = 16.0
+
+[node name="Node2D" type="Node2D" unique_id=176440137]
+
+[node name="Bullet" type="Area2D" parent="." unique_id=414047095 groups=["Player"]]
+position = Vector2(227, 136)
+script = ExtResource("1_14k46")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet" unique_id=2131852751]
+shape = SubResource("CapsuleShape2D_pypll")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bullet" unique_id=936776413]
+texture = ExtResource("2_qvus8")
+
+[node name="Bullet2" type="Area2D" parent="." unique_id=1505445072 groups=["Player"]]
+position = Vector2(905, 444)
+script = ExtResource("1_14k46")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet2" unique_id=1937657822]
+shape = SubResource("CapsuleShape2D_pypll")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bullet2" unique_id=815068914]
+texture = ExtResource("2_qvus8")
+
+[node name="Player" parent="." unique_id=514404792 instance=ExtResource("3_qvus8")]
+position = Vector2(240, 367)
+
+[node name="CollisionShape2D" parent="Player" index="1" unique_id=2070259686 groups=["Player"]]
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=2052246274 groups=["SpawnPoint"]]
+position = Vector2(555, 196)
+
+[connection signal="body_entered" from="Bullet" to="Bullet" method="_on_body_entered"]
+[connection signal="body_entered" from="Bullet2" to="Bullet2" method="_on_body_entered"]
+
+[editable path="Player"]
