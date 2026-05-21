@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d0rpt5kp24qe5"
-path="res://.godot/imported/P2 Jump Sound.wav-78cca87530e2e4dc4eac288894f18d94.sample"
+path="res://.godot/imported/P2 Jump Sound.wav-41cd13cdd702416e18c81311a62ffbc0.sample"
 
 [deps]
 
-source_file="res://Added_Sprites/P2 Jump Sound.wav"
-dest_files=["res://.godot/imported/P2 Jump Sound.wav-78cca87530e2e4dc4eac288894f18d94.sample"]
+source_file="res://Audio/P2 Jump Sound.wav"
+dest_files=["res://.godot/imported/P2 Jump Sound.wav-41cd13cdd702416e18c81311a62ffbc0.sample"]
 
 [params]
 

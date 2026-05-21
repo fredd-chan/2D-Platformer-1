@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d055voyrwqpkw"]
 
 [ext_resource type="Script" uid="uid://dm4f85m18rkkw" path="res://Scripts/player.gd" id="1_mtyrt"]
-[ext_resource type="AudioStream" uid="uid://d0rpt5kp24qe5" path="res://Added_Sprites/P2 Jump Sound.wav" id="2_8os5a"]
+[ext_resource type="AudioStream" uid="uid://d0rpt5kp24qe5" path="res://Audio/P2 Jump Sound.wav" id="2_8os5a"]
 [ext_resource type="Texture2D" uid="uid://dom5vxmrit3hs" path="res://Added_Sprites/Sprig-Jump.png" id="2_bth63"]
 [ext_resource type="Texture2D" uid="uid://0yrlcx61t06n" path="res://Added_Sprites/PLUH.png" id="4_8os5a"]
 [ext_resource type="Texture2D" uid="uid://cc63ry158vw3a" path="res://Added_Sprites/PLUH_Fall.png" id="5_dgubp"]

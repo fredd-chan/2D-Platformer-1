@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://d01qn5c075qfp"
-path="res://.godot/imported/Jump_sound.wav-2fd1f7d8f12cafda9effcc904268a3b7.sample"
+uid="uid://4crguxq4h7f6"
+path="res://.godot/imported/Button Sound.wav-7a53e1bd5b252fd11fabbfe7d781bcc1.sample"
 
 [deps]
 
-source_file="res://Added_Sprites/Jump_sound.wav"
-dest_files=["res://.godot/imported/Jump_sound.wav-2fd1f7d8f12cafda9effcc904268a3b7.sample"]
+source_file="res://Audio/Button Sound.wav"
+dest_files=["res://.godot/imported/Button Sound.wav-7a53e1bd5b252fd11fabbfe7d781bcc1.sample"]
 
 [params]
 

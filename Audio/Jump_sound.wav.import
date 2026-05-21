@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://barccohr6va7a"
-path="res://.godot/imported/Menu.wav-ef4f7418c8f7f949a16bf868bfb3bc06.sample"
+uid="uid://d01qn5c075qfp"
+path="res://.godot/imported/Jump_sound.wav-5d932f7d0471c9faeb92a572e5849132.sample"
 
 [deps]
 
-source_file="res://Added_Sprites/Menu.wav"
-dest_files=["res://.godot/imported/Menu.wav-ef4f7418c8f7f949a16bf868bfb3bc06.sample"]
+source_file="res://Audio/Jump_sound.wav"
+dest_files=["res://.godot/imported/Jump_sound.wav-5d932f7d0471c9faeb92a572e5849132.sample"]
 
 [params]
 

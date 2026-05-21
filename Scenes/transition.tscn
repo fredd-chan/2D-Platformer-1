@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bklpfav3xdxc4" path="res://Scenes/Ladder.tscn" id="3_0y44x"]
 [ext_resource type="Texture2D" uid="uid://ob6n05qelbl1" path="res://Added_Sprites/Lvl1-Lvl2S.png" id="4_mkumt"]
 [ext_resource type="Script" uid="uid://bcjnnl337bs4d" path="res://Scripts/camera_2d1.gd" id="4_s7ldf"]
+[ext_resource type="PackedScene" uid="uid://cu6kh7swuro4n" path="res://Scenes/Lv2_Camera.tscn" id="5_0slgg"]
 [ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="5_0y44x"]
 [ext_resource type="PackedScene" uid="uid://do0vbcmfd4re8" path="res://Scenes/end_flag2.tscn" id="5_j2wpc"]
 [ext_resource type="PackedScene" uid="uid://d055voyrwqpkw" path="res://Scenes/player_2.tscn" id="6_mkumt"]
@@ -28,7 +29,7 @@ position = Vector2(102, 75)
 
 [node name="EndFlag3" parent="." unique_id=1961935802 instance=ExtResource("5_j2wpc")]
 position = Vector2(100, 268)
-scene_to_load = ExtResource("5_j2wpc")
+scene_to_load = ExtResource("5_0slgg")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=2097989212]
 position = Vector2(100, 6)
