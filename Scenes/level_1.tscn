@@ -1520,6 +1520,20 @@ texture = ExtResource("1_6ioyp")
 position = Vector2(623, 33)
 texture = ExtResource("2_u0op5")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=16979099]
+offset_left = -765.0
+offset_top = 378.0
+offset_right = 784.0
+offset_bottom = 686.0
+color = Color(0, 0.25490198, 0.2509804, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=394736735]
+offset_left = 783.0
+offset_top = 372.0
+offset_right = 1805.0
+offset_bottom = 680.0
+color = Color(0, 0.36454582, 0.2740126, 1)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=469548782]
 position = Vector2(605, 90.00001)
 scale = Vector2(0.9, 0.9)
@@ -1573,6 +1587,7 @@ position = Vector2(-48.5, 4)
 shape = SubResource("RectangleShape2D_x68w5")
 
 [node name="Area2D" type="Area2D" parent="DIE" unique_id=1609786743]
+visible = false
 script = ExtResource("18_bd6hb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DIE/Area2D" unique_id=1425031661]

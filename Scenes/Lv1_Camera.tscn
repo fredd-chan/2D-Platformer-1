@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dbb72bvdesdfc" path="res://Scripts/Lv1.gd" id="1_xkndl"]
 [ext_resource type="PackedScene" uid="uid://ds75lvm8eqf4l" path="res://Scenes/level_1.tscn" id="2_u44n3"]
 [ext_resource type="Script" uid="uid://hj6g3dqq3qkt" path="res://Scripts/camera_2d.gd" id="3_u44n3"]
+[ext_resource type="Script" uid="uid://b3tjdcjiov4co" path="res://Scripts/PauseMenu.gd" id="4_424hx"]
 
 [node name="Lv1" type="Node" unique_id=55967825]
 script = ExtResource("1_xkndl")
@@ -41,5 +42,8 @@ render_target_update_mode = 4
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer2/SubViewport" unique_id=333604413]
 script = ExtResource("3_u44n3")
 zoom_level = 4.0
+
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=578519551]
+script = ExtResource("4_424hx")
 
 [editable path="HBoxContainer/SubViewportContainer/SubViewport/Main"]

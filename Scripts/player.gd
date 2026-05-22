@@ -19,6 +19,7 @@ signal OnUpdateHealth (health : int)
 @export var input_down : String = "climb_down"
 @export var climb_speed : float = 100.0
 @export var lock_x_on_ladder : bool = false
+@export var death_y : float = 500
 
 var move_input : float
 var can_double_jump : bool = false
@@ -88,7 +89,7 @@ func _process(_delta):
 	if velocity.x != 0:
 		sprite.flip_h = velocity.x > 0
 	
-	if global_position.y > 500:
+	if global_position.y > death_y:
 		game_over()
 	_manage_animation()
 
@@ -136,3 +137,6 @@ func freeze():
 func unfreeze():
 	frozen = false
 	set_physics_process(true)
+	
+func _ready():
+	process_mode = Node.PROCESS_MODE_PAUSABLE

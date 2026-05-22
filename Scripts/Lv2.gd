@@ -1,5 +1,6 @@
 extends Node
 
+@onready var pause_menu = $PauseMenu
 @onready var players := {
 	"1": {
 		viewport = $"HBoxContainer/SubViewportContainer/SubViewport",
@@ -35,3 +36,4 @@ func _update_viewport_sizes():
 	$HBoxContainer/SubViewportContainer2.size.x = screen_size.x / 2
 	players["1"].viewport.size = Vector2(screen_size.x / 2, screen_size.y)
 	players["2"].viewport.size = Vector2(screen_size.x / 2, screen_size.y)
+	

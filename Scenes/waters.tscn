@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://b6tpsnx4y1pfx"]
+
+[ext_resource type="Texture2D" uid="uid://0dywsdfu4mcg" path="res://Added_Sprites/W_BG.png" id="1_3sccl"]
+[ext_resource type="Texture2D" uid="uid://db3x42v47f6y4" path="res://Added_Sprites/W_Tile.png" id="2_wc2ne"]
+[ext_resource type="Texture2D" uid="uid://lynynpuphst" path="res://Added_Sprites/W_Over.png" id="3_fje78"]
+[ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="4_fje78"]
+[ext_resource type="Script" uid="uid://cls03373cihlr" path="res://Scripts/Water_Cam.gd" id="5_ftsbe"]
+[ext_resource type="AudioStream" uid="uid://drepn8rvttjvi" path="res://Audio/Waters.wav" id="6_ftsbe"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ftsbe"]
+texture = ExtResource("2_wc2ne")
+0:0/size_in_atlas = Vector2i(75, 31)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(599.9188, 6.0252676, 494.16187, 6.0252676, 493.80215, 18.43552, 599.9188, 110.882904)
+0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(373.6565, 5.1259737, 378.33282, 2.428093, 427.97385, 2.428093, 428.69327, 4.586397, 429.95227, 8.363431, 428.69327, 26.529163, 373.83636, 14.478628)
+0:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(277.07236, -14.478628, 271.49673, -9.622442, 270.7773, -4.586397, 295.77768, -5.485691, 310.5261, -3.507246, 323.1162, -3.3273869, 322.57663, -10.701595, 320.41833, -13.759192)
+0:0/0/physics_layer_0/polygon_3/points = PackedVector2Array(141.27902, -29.766619, 138.22144, -26.529161, 137.86172, -18.795237, 201.89142, -18.255661, 201.53171, -25.809727, 196.67552, -29.946478)
+0:0/0/physics_layer_0/polygon_4/points = PackedVector2Array(16.99665, -35.522102, 7.643997, -36.421394, 5.66555, -31.565208, 8.0037155, -24.37086, 64.839066, -25.090294, 64.2995, -33.004078, 61.961334, -36.241535)
+0:0/0/physics_layer_0/polygon_5/points = PackedVector2Array(-106.92601, -30.306194, -100.810814, -34.08323, -96.4942, -32.104782, -52.608673, -31.565207, -52.248955, -21.852835, -105.667, -23.651423)
+0:0/0/physics_layer_0/polygon_6/points = PackedVector2Array(-218.61829, -8.903006, -221.85574, -16.457073, -218.978, -22.212551, -157.28645, -22.212551, -154.94829, -15.37792, -161.24335, -10.881453)
+0:0/0/physics_layer_0/polygon_7/points = PackedVector2Array(-282.10843, -5.485691, -287.14447, -9.622441, -338.0445, -10.162018, -339.3035, -6.384985, -337.5049, 0.9892235, -284.8063, 3.507246, -282.46814, -1.7086563)
+0:0/0/physics_layer_0/polygon_8/points = PackedVector2Array(-453.15405, 9.802301, -396.13882, 9.802301, -396.3187, 16.816792, -402.07416, 19.87439, -452.0749, 19.87439, -453.69363, 11.780746)
+0:0/0/physics_layer_0/polygon_9/points = PackedVector2Array(-600.4584, 27.788174, -526.53644, 27.608315, -524.558, 45.953907, -600.4584, 40.378284)
+
+[sub_resource type="TileSet" id="TileSet_4ysk7"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ftsbe")
+
+[node name="Waters" type="Node2D" unique_id=850068299]
+
+[node name="WBg" type="Sprite2D" parent="." unique_id=563583613]
+position = Vector2(-8, -7)
+texture = ExtResource("1_3sccl")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1445096066]
+tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_4ysk7")
+
+[node name="Node" type="Node" parent="." unique_id=1885221609]
+
+[node name="ColorRect" type="ColorRect" parent="Node" unique_id=1690769743]
+offset_left = -609.0
+offset_top = -321.0
+offset_right = 592.0
+offset_bottom = -256.0
+color = Color(4.813075e-08, 0.08876278, 0.17428493, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Node" unique_id=2066820528]
+offset_left = 589.0
+offset_top = -321.0
+offset_right = 842.0
+offset_bottom = 405.0
+color = Color(4.813075e-08, 0.08876278, 0.17428493, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Node" unique_id=1454977115]
+offset_left = -608.0
+offset_top = 243.0
+offset_right = 593.0
+offset_bottom = 408.0
+color = Color(4.813075e-08, 0.08876278, 0.17428493, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Node" unique_id=178219094]
+offset_left = -786.0
+offset_top = -321.0
+offset_right = -608.0
+offset_bottom = 404.0
+color = Color(4.813075e-08, 0.08876278, 0.17428493, 1)
+
+[node name="Player" parent="." unique_id=514404792 instance=ExtResource("4_fje78")]
+position = Vector2(580, -4)
+death_y = 200.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=979350495]
+position = Vector2(367, -5)
+script = ExtResource("5_ftsbe")
+
+[node name="WOver" type="Sprite2D" parent="." unique_id=492816629]
+position = Vector2(-8, -7)
+texture = ExtResource("3_fje78")
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=387684874 groups=["SpawnPoint"]]
+position = Vector2(582, -10)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=900890591]
+stream = ExtResource("6_ftsbe")
+autoplay = true

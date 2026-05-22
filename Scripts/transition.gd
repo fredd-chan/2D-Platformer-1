@@ -3,7 +3,8 @@ extends Node2D
 var player1
 var player2
 
-func _ready():
+func _ready() -> void:
+	get_tree().root.content_scale_mode = Window.CONTENT_SCALE_MODE_DISABLED
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	get_tree().root.content_scale_mode = Window.CONTENT_SCALE_MODE_CANVAS_ITEMS
 	await get_tree().process_frame

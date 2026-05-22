@@ -1,5 +1,6 @@
 extends Node
 
+@onready var pause_menu = $PauseMenu
 @onready var players := {
 	"1": {
 		viewport = $"HBoxContainer/SubViewportContainer/SubViewport",

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://w7j8bc13uwsl" path="res://Scripts/Lv2.gd" id="1_cguo2"]
 [ext_resource type="PackedScene" uid="uid://dxuf1c4607yvs" path="res://Scenes/Level_2.tscn" id="2_cguo2"]
 [ext_resource type="Script" uid="uid://hj6g3dqq3qkt" path="res://Scripts/camera_2d.gd" id="3_au8oi"]
+[ext_resource type="Script" uid="uid://b3tjdcjiov4co" path="res://Scripts/PauseMenu.gd" id="4_fhwd7"]
 
 [node name="Lv1" type="Node" unique_id=55967825]
 script = ExtResource("1_cguo2")
@@ -24,7 +25,6 @@ render_target_update_mode = 4
 
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer/SubViewport" unique_id=1214271037]
 script = ExtResource("3_au8oi")
-zoom_level = 3.0
 
 [node name="ColorRect" type="ColorRect" parent="HBoxContainer" unique_id=1297339498]
 custom_minimum_size = Vector2(1, 0)
@@ -40,6 +40,8 @@ render_target_update_mode = 4
 
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer2/SubViewport" unique_id=333604413]
 script = ExtResource("3_au8oi")
-zoom_level = 3.0
+
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=137817621]
+script = ExtResource("4_fhwd7")
 
 [editable path="HBoxContainer/SubViewportContainer/SubViewport/Node2D"]
