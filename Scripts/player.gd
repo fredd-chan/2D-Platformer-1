@@ -25,6 +25,8 @@ var move_input : float
 var can_double_jump : bool = false
 var on_ladder : bool = false
 var frozen : bool = false
+var has_shield : bool = false
+var shield_active : bool = false
 
 @onready var sprite : Sprite2D = $Sprite
 @onready var anim : AnimationPlayer = $AnimationPlayer
@@ -140,3 +142,7 @@ func unfreeze():
 	
 func _ready():
 	process_mode = Node.PROCESS_MODE_PAUSABLE
+	if PlayerStats.has_guardian:
+		pass
+	if PlayerStats.has_to_protect:
+		pass

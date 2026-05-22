@@ -14,6 +14,8 @@ extends Node
 	}
 }
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	pause_menu = $PauseMenu
 	players["2"].viewport.world_2d = players["1"].viewport.world_2d
 	for node in players.values():
 		var remote_transform := RemoteTransform2D.new()
@@ -36,3 +38,10 @@ func _update_viewport_sizes():
 	$HBoxContainer/SubViewportContainer2.size.x = screen_size.x / 2
 	players["1"].viewport.size = Vector2(screen_size.x / 2, screen_size.y)
 	players["2"].viewport.size = Vector2(screen_size.x / 2, screen_size.y)
+
+func _input(_event):
+	if Input.is_action_just_pressed("ui_cancel"):
+		if get_tree().paused:
+			pause_menu.hide_menu()
+		else:
+			pause_menu.show_menu()

@@ -36,7 +36,7 @@ position = Vector2(100, 6)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1274088220]
 position = Vector2(113, 107)
-zoom = Vector2(3, 3)
+zoom = Vector2(5, 5)
 script = ExtResource("4_s7ldf")
 
 [node name="Player" parent="." unique_id=514404792 instance=ExtResource("5_0y44x")]

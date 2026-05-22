@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="4_fje78"]
 [ext_resource type="Script" uid="uid://cls03373cihlr" path="res://Scripts/Water_Cam.gd" id="5_ftsbe"]
 [ext_resource type="AudioStream" uid="uid://drepn8rvttjvi" path="res://Audio/Waters.wav" id="6_ftsbe"]
+[ext_resource type="Script" uid="uid://becrvlrd2n0n2" path="res://Scripts/seed_guardian.gd" id="7_ndshw"]
+[ext_resource type="PackedScene" uid="uid://haswtifpaywu" path="res://Scenes/mystic_tree.tscn" id="8_frokb"]
+[ext_resource type="Script" uid="uid://bxpc1bj36mrtw" path="res://Scripts/portal.gd" id="9_w8oiy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ftsbe"]
 texture = ExtResource("2_wc2ne")
@@ -26,61 +29,83 @@ texture = ExtResource("2_wc2ne")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ftsbe")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b21nq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgu1n"]
+
 [node name="Waters" type="Node2D" unique_id=850068299]
 
 [node name="WBg" type="Sprite2D" parent="." unique_id=563583613]
-position = Vector2(-8, -7)
+position = Vector2(-8, -7.000003)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("1_3sccl")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1445096066]
+scale = Vector2(0.9, 0.9)
 tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0)
 tile_set = SubResource("TileSet_4ysk7")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=457322314]
+script = ExtResource("5_ftsbe")
 
 [node name="Node" type="Node" parent="." unique_id=1885221609]
 
 [node name="ColorRect" type="ColorRect" parent="Node" unique_id=1690769743]
 offset_left = -609.0
-offset_top = -321.0
+offset_top = -297.0
 offset_right = 592.0
-offset_bottom = -256.0
+offset_bottom = -232.0
 color = Color(4.813075e-08, 0.08876278, 0.17428493, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="Node" unique_id=2066820528]
-offset_left = 589.0
+offset_left = 532.0
 offset_top = -321.0
-offset_right = 842.0
+offset_right = 785.0
 offset_bottom = 405.0
 color = Color(4.813075e-08, 0.08876278, 0.17428493, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="Node" unique_id=1454977115]
-offset_left = -608.0
-offset_top = 243.0
-offset_right = 593.0
-offset_bottom = 408.0
+offset_left = -609.0
+offset_top = 217.0
+offset_right = 592.0
+offset_bottom = 382.0
 color = Color(4.813075e-08, 0.08876278, 0.17428493, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="Node" unique_id=178219094]
-offset_left = -786.0
+offset_left = -722.0
 offset_top = -321.0
-offset_right = -608.0
+offset_right = -544.0
 offset_bottom = 404.0
 color = Color(4.813075e-08, 0.08876278, 0.17428493, 1)
 
 [node name="Player" parent="." unique_id=514404792 instance=ExtResource("4_fje78")]
-position = Vector2(580, -4)
+position = Vector2(519, -2)
 death_y = 200.0
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=979350495]
-position = Vector2(367, -5)
-script = ExtResource("5_ftsbe")
-
 [node name="WOver" type="Sprite2D" parent="." unique_id=492816629]
-position = Vector2(-8, -7)
+position = Vector2(-8, -7.000003)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("3_fje78")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=387684874 groups=["SpawnPoint"]]
-position = Vector2(582, -10)
+position = Vector2(520, -39)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=900890591]
 stream = ExtResource("6_ftsbe")
 autoplay = true
+
+[node name="seed" type="Area2D" parent="." unique_id=2005865320]
+script = ExtResource("7_ndshw")
+mystic_tree_scene = ExtResource("8_frokb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="seed" unique_id=102776381]
+position = Vector2(-534, 7)
+shape = SubResource("RectangleShape2D_b21nq")
+
+[node name="portal" type="Area2D" parent="." unique_id=1287938520]
+script = ExtResource("9_w8oiy")
+mystic_tree_scene = ExtResource("8_frokb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="portal" unique_id=202152931]
+position = Vector2(-534, 7)
+shape = SubResource("RectangleShape2D_cgu1n")

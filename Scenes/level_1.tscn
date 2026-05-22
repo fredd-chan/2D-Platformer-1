@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://cllitohomx438" path="res://Added_Sprites/Respawn.png" id="27_u0op5"]
 [ext_resource type="Texture2D" uid="uid://cfssgkenceyu0" path="res://Added_Sprites/NPC.png" id="28_1f27d"]
 [ext_resource type="Texture2D" uid="uid://cxdmijbh3lix7" path="res://Added_Sprites/Vines.png" id="38_x68w5"]
+[ext_resource type="PackedScene" uid="uid://bd8vhhjrwel5q" path="res://Scenes/checkpoint.tscn" id="39_vyomg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u0op5"]
 animations = [{
@@ -1940,3 +1941,9 @@ lock_x_on_ladder = true
 [node name="Vines" type="Sprite2D" parent="." unique_id=24529336]
 position = Vector2(560, -25)
 texture = ExtResource("38_x68w5")
+
+[node name="Checkpoint?" type="Marker2D" parent="." unique_id=1847251459 groups=["SpawnPoint"]]
+position = Vector2(544, -63)
+
+[node name="Checkpoint" parent="." unique_id=281886281 instance=ExtResource("39_vyomg")]
+position = Vector2(552, -69)

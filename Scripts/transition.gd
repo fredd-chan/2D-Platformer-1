@@ -4,9 +4,8 @@ var player1
 var player2
 
 func _ready() -> void:
-	get_tree().root.content_scale_mode = Window.CONTENT_SCALE_MODE_DISABLED
+	# Removed content_scale_mode lines — they caused progressive zoom on repeated visits
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	get_tree().root.content_scale_mode = Window.CONTENT_SCALE_MODE_CANVAS_ITEMS
 	await get_tree().process_frame
 	player1 = $Player
 	player2 = $Player2

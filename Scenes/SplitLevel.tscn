@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bd340mi3vqbvq"]
+
+[ext_resource type="Script" uid="uid://e2cvulp5yco3" path="res://Scripts/split_level.gd" id="1_ki6to"]
+[ext_resource type="PackedScene" uid="uid://b6tpsnx4y1pfx" path="res://Scenes/waters.tscn" id="2_ki6to"]
+[ext_resource type="PackedScene" uid="uid://ds75lvm8eqf4l" path="res://Scenes/level_1.tscn" id="2_mr5iw"]
+[ext_resource type="PackedScene" uid="uid://6ym3ox4el30n" path="res://Scenes/PauseMenu.tscn" id="4_4vxtj"]
+
+[node name="SplitLevel" type="Node" unique_id=1210354250]
+script = ExtResource("1_ki6to")
+scene_p1 = ExtResource("2_ki6to")
+scene_p2 = ExtResource("2_mr5iw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=416967095]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer" unique_id=65302814]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer" unique_id=320745317]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer" unique_id=1444520393]
+layout_mode = 2
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="HBoxContainer" unique_id=522136708]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer2" unique_id=1340126759]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1757991154]
+
+[node name="PauseMenu" parent="." unique_id=432455927 instance=ExtResource("4_4vxtj")]
