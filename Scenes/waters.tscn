@@ -6,9 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="4_fje78"]
 [ext_resource type="Script" uid="uid://cls03373cihlr" path="res://Scripts/Water_Cam.gd" id="5_ftsbe"]
 [ext_resource type="AudioStream" uid="uid://drepn8rvttjvi" path="res://Audio/Waters.wav" id="6_ftsbe"]
-[ext_resource type="Script" uid="uid://becrvlrd2n0n2" path="res://Scripts/seed_guardian.gd" id="7_ndshw"]
-[ext_resource type="PackedScene" uid="uid://haswtifpaywu" path="res://Scenes/mystic_tree.tscn" id="8_frokb"]
-[ext_resource type="Script" uid="uid://bxpc1bj36mrtw" path="res://Scripts/portal.gd" id="9_w8oiy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ftsbe"]
 texture = ExtResource("2_wc2ne")
@@ -28,10 +25,6 @@ texture = ExtResource("2_wc2ne")
 [sub_resource type="TileSet" id="TileSet_4ysk7"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ftsbe")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b21nq"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgu1n"]
 
 [node name="Waters" type="Node2D" unique_id=850068299]
 
@@ -93,19 +86,3 @@ position = Vector2(520, -39)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=900890591]
 stream = ExtResource("6_ftsbe")
 autoplay = true
-
-[node name="seed" type="Area2D" parent="." unique_id=2005865320]
-script = ExtResource("7_ndshw")
-mystic_tree_scene = ExtResource("8_frokb")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="seed" unique_id=102776381]
-position = Vector2(-534, 7)
-shape = SubResource("RectangleShape2D_b21nq")
-
-[node name="portal" type="Area2D" parent="." unique_id=1287938520]
-script = ExtResource("9_w8oiy")
-mystic_tree_scene = ExtResource("8_frokb")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="portal" unique_id=202152931]
-position = Vector2(-534, 7)
-shape = SubResource("RectangleShape2D_cgu1n")

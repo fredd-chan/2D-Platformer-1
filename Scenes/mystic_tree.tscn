@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://haswtifpaywu"]
 
-[ext_resource type="Script" uid="uid://e050i4o3pon5" path="res://Scripts/mystic_tree.gd" id="1_ojmiq"]
+[ext_resource type="Script" uid="uid://b28xxquxt84d8" path="res://Scripts/Flame.gd" id="1_ojmiq"]
+
 
 [node name="Node2D" type="Node2D" unique_id=161246858]
 script = ExtResource("1_ojmiq")

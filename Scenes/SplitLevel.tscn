@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://e2cvulp5yco3" path="res://Scripts/split_level.gd" id="1_ki6to"]
 [ext_resource type="PackedScene" uid="uid://b6tpsnx4y1pfx" path="res://Scenes/waters.tscn" id="2_ki6to"]
-[ext_resource type="PackedScene" uid="uid://ds75lvm8eqf4l" path="res://Scenes/level_1.tscn" id="2_mr5iw"]
+[ext_resource type="PackedScene" uid="uid://d3itjv1ysryql" path="res://Scenes/level_menu.tscn" id="2_mr5iw"]
 [ext_resource type="PackedScene" uid="uid://6ym3ox4el30n" path="res://Scenes/PauseMenu.tscn" id="4_4vxtj"]
+
 
 [node name="SplitLevel" type="Node" unique_id=1210354250]
 script = ExtResource("1_ki6to")
