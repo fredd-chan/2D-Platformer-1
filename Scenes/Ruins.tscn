@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://geywxgq86p7c"]
+
+[ext_resource type="Script" uid="uid://dlkgvkewahlri" path="res://Scripts/ruins.gd" id="1_arfdv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrinw"]
+size = Vector2(72.75, 72.5)
+
+[node name="EndFlag" type="Area2D" unique_id=1961935802]
+script = ExtResource("1_arfdv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=204751705]
+shape = SubResource("RectangleShape2D_wrinw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

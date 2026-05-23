@@ -25,7 +25,7 @@ position = Vector2(102, 149)
 texture = ExtResource("2_nshyj")
 
 [node name="Ladder" parent="." unique_id=1860804923 instance=ExtResource("3_0y44x")]
-position = Vector2(102, 75)
+position = Vector2(101, 122)
 
 [node name="EndFlag3" parent="." unique_id=1961935802 instance=ExtResource("5_j2wpc")]
 position = Vector2(100, 268)

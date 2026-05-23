@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://haswtifpaywu"]
 
 [ext_resource type="Script" uid="uid://e050i4o3pon5" path="res://Scripts/mystic_tree.gd" id="1_ojmiq"]
-[ext_resource type="PackedScene" uid="uid://cu6kh7swuro4n" path="res://Scenes/Lv2_Camera.tscn" id="2_dhngf"]
 [ext_resource type="Texture2D" uid="uid://b3gpqecs71e50" path="res://Added_Sprites/Mystic_tree.png" id="2_sl2gj"]
 [ext_resource type="Texture2D" uid="uid://bqxmui6u4yl05" path="res://Added_Sprites/Mystic_tree_f.png" id="3_fgym6"]
 [ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="4_dhngf"]
@@ -20,7 +19,6 @@ sources/0 = SubResource("TileSetAtlasSource_75ukv")
 
 [node name="MysticTree" type="Node2D" unique_id=161246858]
 script = ExtResource("1_ojmiq")
-level_2_scene = ExtResource("2_dhngf")
 
 [node name="DialogueUI" type="CanvasLayer" parent="." unique_id=1648479595]
 

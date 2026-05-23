@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cu6kh7swuro4n"]
 
 [ext_resource type="Script" uid="uid://clye4i104cjeh" path="res://Scripts/Lv2.gd" id="1_cguo2"]
-[ext_resource type="PackedScene" uid="uid://dxuf1c4607yvs" path="res://Scenes/Level_2.tscn" id="2_cguo2"]
+[ext_resource type="PackedScene" uid="uid://dxuf1c4607yvs" path="res://Scenes/level_2.tscn" id="2_cguo2"]
 [ext_resource type="Script" uid="uid://hj6g3dqq3qkt" path="res://Scripts/camera_2d.gd" id="3_au8oi"]
 [ext_resource type="PackedScene" uid="uid://6ym3ox4el30n" path="res://Scenes/PauseMenu.tscn" id="4_fhwd7"]
 
@@ -22,6 +22,9 @@ size = Vector2i(576, 648)
 render_target_update_mode = 4
 
 [node name="Node2D" parent="HBoxContainer/SubViewportContainer/SubViewport" unique_id=283656412 instance=ExtResource("2_cguo2")]
+
+[node name="watercave" parent="HBoxContainer/SubViewportContainer/SubViewport/Node2D" index="10" unique_id=1961935802]
+scene_to_load = null
 
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer/SubViewport" unique_id=1214271037]
 zoom = Vector2(5, 5)

@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d1syur7qrqgaw" path="res://Scenes/Watercave.tscn" id="7_cleky"]
 [ext_resource type="PackedScene" uid="uid://bd340mi3vqbvq" path="res://Scenes/SplitLevel.tscn" id="8_4ge3q"]
 [ext_resource type="PackedScene" uid="uid://bd8vhhjrwel5q" path="res://Scenes/checkpoint.tscn" id="9_8npbe"]
+[ext_resource type="PackedScene" uid="uid://geywxgq86p7c" path="res://Scenes/Ruins.tscn" id="10_42uki"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_apq5t"]
 texture = ExtResource("2_ostk4")
@@ -38,7 +39,7 @@ position = Vector2(8, -8)
 texture = ExtResource("1_vgr4u")
 
 [node name="Player" parent="." unique_id=514404792 instance=ExtResource("3_apq5t")]
-position = Vector2(-838, 799)
+position = Vector2(-644, -112)
 jump_force = 230.0
 lock_x_on_ladder = true
 death_y = 1000.0
@@ -57,6 +58,11 @@ tile_set = SubResource("TileSet_wn4i5")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=863277995 groups=["SpawnPoint"]]
 position = Vector2(-910, -885)
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1447565413 groups=["SpawnPoint"]]
+
+[node name="Checkpoint" parent="." unique_id=281886281 instance=ExtResource("9_8npbe")]
+position = Vector2(-623, -124)
 
 [node name="Bridge Platform" type="Node" parent="." unique_id=2101943890]
 
@@ -158,7 +164,6 @@ color = Color(0, 0, 0, 1)
 position = Vector2(-1000, 944)
 scene_to_load = ExtResource("8_4ge3q")
 
-[node name="Marker2D" type="Marker2D" parent="." unique_id=1447565413 groups=["SpawnPoint"]]
-
-[node name="Checkpoint" parent="." unique_id=281886281 instance=ExtResource("9_8npbe")]
-position = Vector2(-623, -124)
+[node name="EndFlag" parent="." unique_id=670957796 instance=ExtResource("10_42uki")]
+position = Vector2(-297, 944)
+scene_to_load = ExtResource("8_4ge3q")

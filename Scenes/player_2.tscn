@@ -98,7 +98,7 @@ _data = {
 &"move": SubResource("Animation_x3wgy")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=514404792 groups=["Player"]]
+[node name="Player" type="CharacterBody2D" unique_id=514404792 groups=["Player", "Player2"]]
 script = ExtResource("1_mtyrt")
 move_speed = 120.0
 input_left = "move_left_p2"
