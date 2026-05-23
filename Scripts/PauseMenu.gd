@@ -3,7 +3,6 @@ extends CanvasLayer
 func _ready():
 	hide()
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	get_tree().root.call_deferred("add_child", self)
 
 func show_menu():
 	show()

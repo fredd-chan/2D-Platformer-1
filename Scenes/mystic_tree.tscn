@@ -1,10 +1,26 @@
 [gd_scene format=3 uid="uid://haswtifpaywu"]
 
-[ext_resource type="Script" uid="uid://b28xxquxt84d8" path="res://Scripts/Flame.gd" id="1_ojmiq"]
+[ext_resource type="Script" uid="uid://e050i4o3pon5" path="res://Scripts/mystic_tree.gd" id="1_ojmiq"]
+[ext_resource type="PackedScene" uid="uid://cu6kh7swuro4n" path="res://Scenes/Lv2_Camera.tscn" id="2_dhngf"]
+[ext_resource type="Texture2D" uid="uid://b3gpqecs71e50" path="res://Added_Sprites/Mystic_tree.png" id="2_sl2gj"]
+[ext_resource type="Texture2D" uid="uid://bqxmui6u4yl05" path="res://Added_Sprites/Mystic_tree_f.png" id="3_fgym6"]
+[ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="4_dhngf"]
+[ext_resource type="Script" uid="uid://dvgj5oye7edi6" path="res://Scripts/Tree_cam.gd" id="4_sl2gj"]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_75ukv"]
+texture = ExtResource("3_fgym6")
+0:0/size_in_atlas = Vector2i(81, 37)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-187.99216, -296.00797, 648.5805, -296.3488, 648.031, 135.07391, 648.031, 185.16455, 646.9519, 134.08469)
+0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-649.1449, 184.58296, -647.45154, -189.38098, -646.3226, 183.17177, -457.06277, 177.15611, -469.5, 127, -428.5, 92, -352, 72, -335, 42, -338, 74, -358, 122, -341, 184, 648, 183, 648, 296, -649, 295)
 
-[node name="Node2D" type="Node2D" unique_id=161246858]
+[sub_resource type="TileSet" id="TileSet_ji1at"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_75ukv")
+
+[node name="MysticTree" type="Node2D" unique_id=161246858]
 script = ExtResource("1_ojmiq")
+level_2_scene = ExtResource("2_dhngf")
 
 [node name="DialogueUI" type="CanvasLayer" parent="." unique_id=1648479595]
 
@@ -17,13 +33,13 @@ offset_top = -198.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="DialogueText" type="Label" parent="DialogueUI/DialogueBox" unique_id=125706826]
+[node name="SpeakerLabel" type="Label" parent="DialogueUI/DialogueBox" unique_id=125706826]
 layout_mode = 0
 offset_right = 187.0
 offset_bottom = 33.0
 theme_override_font_sizes/font_size = 30
 
-[node name="SpeakerLabel" type="Label" parent="DialogueUI/DialogueBox" unique_id=260979788]
+[node name="DialogueText" type="Label" parent="DialogueUI/DialogueBox" unique_id=260979788]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -53,3 +69,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=122516369]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_ji1at")
+
+[node name="MysticTree" type="Sprite2D" parent="." unique_id=1598095106]
+position = Vector2(6, -4)
+texture = ExtResource("2_sl2gj")
+
+[node name="Player" parent="." unique_id=514404792 instance=ExtResource("4_dhngf")]
+position = Vector2(643, 173)
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=946702138 groups=["SpawnPoint"]]
+position = Vector2(639, 164)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=221067035]
+zoom = Vector2(5, 5)
+script = ExtResource("4_sl2gj")

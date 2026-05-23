@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://ckd67t0feh5b0" path="res://Scripts/chest2.gd" id="5_wn4i5"]
 [ext_resource type="AudioStream" uid="uid://cf67ql83jdi62" path="res://Audio/Level2Music.mp3" id="6_2g134"]
 [ext_resource type="PackedScene" uid="uid://d1syur7qrqgaw" path="res://Scenes/Watercave.tscn" id="7_cleky"]
-[ext_resource type="PackedScene" uid="uid://b6tpsnx4y1pfx" path="res://Scenes/waters.tscn" id="8_uhnj4"]
+[ext_resource type="PackedScene" uid="uid://bd340mi3vqbvq" path="res://Scenes/SplitLevel.tscn" id="8_4ge3q"]
 [ext_resource type="PackedScene" uid="uid://bd8vhhjrwel5q" path="res://Scenes/checkpoint.tscn" id="9_8npbe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_apq5t"]
@@ -38,7 +38,7 @@ position = Vector2(8, -8)
 texture = ExtResource("1_vgr4u")
 
 [node name="Player" parent="." unique_id=514404792 instance=ExtResource("3_apq5t")]
-position = Vector2(-818, -1016)
+position = Vector2(-838, 799)
 jump_force = 230.0
 lock_x_on_ladder = true
 death_y = 1000.0
@@ -154,9 +154,9 @@ offset_right = -991.0
 offset_bottom = 1443.0
 color = Color(0, 0, 0, 1)
 
-[node name="EndFlag" parent="." unique_id=1961935802 instance=ExtResource("7_cleky")]
+[node name="watercave" parent="." unique_id=1961935802 instance=ExtResource("7_cleky")]
 position = Vector2(-1000, 944)
-scene_to_load = ExtResource("8_uhnj4")
+scene_to_load = ExtResource("8_4ge3q")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1447565413 groups=["SpawnPoint"]]
 

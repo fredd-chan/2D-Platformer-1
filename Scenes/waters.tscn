@@ -6,12 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="4_fje78"]
 [ext_resource type="Script" uid="uid://cls03373cihlr" path="res://Scripts/Water_Cam.gd" id="5_ftsbe"]
 [ext_resource type="AudioStream" uid="uid://drepn8rvttjvi" path="res://Audio/Waters.wav" id="6_ftsbe"]
+[ext_resource type="PackedScene" uid="uid://d1syur7qrqgaw" path="res://Scenes/Watercave.tscn" id="7_4ysk7"]
+[ext_resource type="PackedScene" uid="uid://haswtifpaywu" path="res://Scenes/mystic_tree.tscn" id="8_frokb"]
+[ext_resource type="Script" uid="uid://drxbuqnrxlb53" path="res://Scripts/tree_flag.gd" id="8_ndshw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ftsbe"]
 texture = ExtResource("2_wc2ne")
 0:0/size_in_atlas = Vector2i(75, 31)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(599.9188, 6.0252676, 494.16187, 6.0252676, 493.80215, 18.43552, 599.9188, 110.882904)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(599.9188, 6.0252676, 599.9817, -155.4918, 598.70715, 6.0539856, 494.16187, 6.0252676, 493.80215, 18.43552, 599.9188, 110.882904)
 0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(373.6565, 5.1259737, 378.33282, 2.428093, 427.97385, 2.428093, 428.69327, 4.586397, 429.95227, 8.363431, 428.69327, 26.529163, 373.83636, 14.478628)
 0:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(277.07236, -14.478628, 271.49673, -9.622442, 270.7773, -4.586397, 295.77768, -5.485691, 310.5261, -3.507246, 323.1162, -3.3273869, 322.57663, -10.701595, 320.41833, -13.759192)
 0:0/0/physics_layer_0/polygon_3/points = PackedVector2Array(141.27902, -29.766619, 138.22144, -26.529161, 137.86172, -18.795237, 201.89142, -18.255661, 201.53171, -25.809727, 196.67552, -29.946478)
@@ -20,7 +23,7 @@ texture = ExtResource("2_wc2ne")
 0:0/0/physics_layer_0/polygon_6/points = PackedVector2Array(-218.61829, -8.903006, -221.85574, -16.457073, -218.978, -22.212551, -157.28645, -22.212551, -154.94829, -15.37792, -161.24335, -10.881453)
 0:0/0/physics_layer_0/polygon_7/points = PackedVector2Array(-282.10843, -5.485691, -287.14447, -9.622441, -338.0445, -10.162018, -339.3035, -6.384985, -337.5049, 0.9892235, -284.8063, 3.507246, -282.46814, -1.7086563)
 0:0/0/physics_layer_0/polygon_8/points = PackedVector2Array(-453.15405, 9.802301, -396.13882, 9.802301, -396.3187, 16.816792, -402.07416, 19.87439, -452.0749, 19.87439, -453.69363, 11.780746)
-0:0/0/physics_layer_0/polygon_9/points = PackedVector2Array(-600.4584, 27.788174, -526.53644, 27.608315, -524.558, 45.953907, -600.4584, 40.378284)
+0:0/0/physics_layer_0/polygon_9/points = PackedVector2Array(-600.4584, 27.788174, -599.6631, -94.63333, -598.70715, 27.720886, -526.53644, 27.608315, -524.558, 45.953907, -600.4584, 40.378284)
 
 [sub_resource type="TileSet" id="TileSet_4ysk7"]
 physics_layer_0/collision_layer = 1
@@ -86,3 +89,8 @@ position = Vector2(520, -39)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=900890591]
 stream = ExtResource("6_ftsbe")
 autoplay = true
+
+[node name="watercave" parent="." unique_id=1961935802 instance=ExtResource("7_4ysk7")]
+position = Vector2(-560, -15)
+script = ExtResource("8_ndshw")
+scene_to_load = ExtResource("8_frokb")

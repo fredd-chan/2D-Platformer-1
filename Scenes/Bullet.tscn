@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bbeu30l028w24"]
 
-[ext_resource type="Script" uid="uid://cu7w1as0sro4t" path="res://Bullet.gd" id="1_14k46"]
+[ext_resource type="Script" uid="uid://cu7w1as0sro4t" path="res://Scripts/Bullet.gd" id="1_14k46"]
 [ext_resource type="Texture2D" uid="uid://bvkn2v5r8xnob" path="res://Sprites/Objects/bullet.png" id="2_qvus8"]
 [ext_resource type="PackedScene" uid="uid://dv0g1jn3n7ini" path="res://Scenes/player.tscn" id="3_qvus8"]
+
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pypll"]
 radius = 5.0
