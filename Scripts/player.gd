@@ -118,7 +118,7 @@ func game_over():
 	health = 1
 	OnUpdateHealth.emit(health)
 	velocity = Vector2.ZERO
-	var spawn = get_tree().get_first_node_in_group("SpawnPoint")
+	var spawn = _find_spawn_in_parent()
 	if spawn:
 		global_position = spawn.global_position
 
@@ -146,3 +146,19 @@ func _ready():
 		pass
 	if PlayerStats.has_to_protect:
 		pass
+
+func _find_spawn_in_parent() -> Node:
+	# Walk up to the scene root and search from there
+	var scene_root = get_parent()
+	while scene_root.get_parent() and not scene_root.get_parent() is SubViewport:
+		scene_root = scene_root.get_parent()
+	return _find_node_in_group(scene_root, "SpawnPoint")
+
+func _find_node_in_group(node: Node, group: String) -> Node:
+	if node.is_in_group(group):
+		return node
+	for child in node.get_children():
+		var result = _find_node_in_group(child, group)
+		if result:
+			return result
+	return null

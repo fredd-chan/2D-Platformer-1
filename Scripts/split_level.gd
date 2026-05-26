@@ -2,8 +2,8 @@ extends Node
 
 @export var scene_p1 : PackedScene
 @export var scene_p2 : PackedScene
-@export var scene_to_load : PackedScene
-
+@export var waters : PackedScene
+@export var ruins : PackedScene
 
 @onready var viewport1 : SubViewport = $HBoxContainer/SubViewportContainer/SubViewport
 @onready var viewport2 : SubViewport = $HBoxContainer/SubViewportContainer2/SubViewport
@@ -14,6 +14,7 @@ var player2 : CharacterBody2D
 var p1_has_key : bool = false
 var p2_has_key : bool = false
 var players_inside : Array = []
+var transitioning : bool = false
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -111,7 +112,7 @@ func _on_body_entered(body: Node2D) -> void:
 		players_inside.append(body)
 	
 	if players_inside.size() >= 1:
-		get_tree().change_scene_to_packed(scene_to_load)
+		get_tree().change_scene_to_packed(waters)
 
 func _on_body_exited(body: Node2D) -> void:
 	if body in players_inside:
@@ -126,3 +127,28 @@ func load_scene_in_viewport1(new_scene: PackedScene):
 	viewport1.add_child(new_level)
 	_setup_camera(viewport1, new_level, "Player")
 	player1 = new_level.get_node_or_null("Player")
+
+func load_scene_in_viewport2(new_scene: PackedScene):
+	for child in viewport2.get_children():
+		child.queue_free()
+	await get_tree().process_frame
+	var new_level = new_scene.instantiate()
+	viewport2.add_child(new_level)
+	_setup_camera(viewport2, new_level, "Player2")
+	player2 = new_level.get_node_or_null("Player2")
+
+func transition_to_fullscreen(new_scene: PackedScene):
+	if transitioning:
+		return
+	transitioning = true
+	print("Transitioning to:res://Scenes/end.tscn", new_scene)
+	var overlay = ColorRect.new()
+	overlay.color = Color.BLACK
+	overlay.modulate.a = 0.0
+	overlay.set_anchors_preset(Control.PRESET_FULL_RECT)
+	get_tree().root.add_child(overlay)
+	var tween = create_tween()
+	tween.tween_property(overlay, "modulate:a", 1.0, 1.5)
+	await tween.finished
+	print("Tween done, loading scene: ", new_scene)
+	get_tree().change_scene_to_packed(new_scene)

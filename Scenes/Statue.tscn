@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dilc0vh5qi6wn"]
+
+[ext_resource type="Script" uid="uid://chl85gcajpijw" path="res://Scripts/statue.gd" id="1_akty7"]
+[ext_resource type="Texture2D" uid="uid://c8nngg6uxjq21" path="res://Added_Sprites/Statue_f.png" id="2_c1dg8"]
+[ext_resource type="Texture2D" uid="uid://8q3ndqfxn3bq" path="res://Added_Sprites/Statue.png" id="3_gyk2l"]
+[ext_resource type="PackedScene" uid="uid://d055voyrwqpkw" path="res://Scenes/player_2.tscn" id="4_4b1s7"]
+[ext_resource type="Script" uid="uid://b0nx8ixv5hadn" path="res://Scripts/stone_cam.gd" id="5_7yk6h"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_er5h6"]
+texture = ExtResource("2_c1dg8")
+0:0/size_in_atlas = Vector2i(81, 37)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-648.5, 135, 197.5, -299, -648.5, -299, -648.5, 295, 646.5, 294, 647.5, 186, 424.5, 186, 420.5, 51, 417.5, 185, -647.5, 185)
+
+[sub_resource type="TileSet" id="TileSet_1jmqh"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_er5h6")
+
+[node name="Node2D" type="Node2D" unique_id=1053151968]
+script = ExtResource("1_akty7")
+
+[node name="DialogueUI" type="CanvasLayer" parent="." unique_id=2093232380]
+
+[node name="DialogueBox" type="Panel" parent="DialogueUI" unique_id=1921978585]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -198.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SpeakerLabel" type="Label" parent="DialogueUI/DialogueBox" unique_id=1181509690]
+layout_mode = 1
+offset_right = 187.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 30
+
+[node name="DialogueText" type="Label" parent="DialogueUI/DialogueBox" unique_id=1358690526]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -50.0
+offset_right = 1150.0
+offset_bottom = 62.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 33
+
+[node name="ContinueLabel" type="Label" parent="DialogueUI/DialogueBox" unique_id=1170815944]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -208.0
+offset_top = -35.0
+offset_right = -24.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Press P to continue"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=134743362]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_1jmqh")
+
+[node name="Statue" type="Sprite2D" parent="." unique_id=1871421440]
+position = Vector2(6, -12)
+texture = ExtResource("3_gyk2l")
+
+[node name="Player" parent="." unique_id=514404792 instance=ExtResource("4_4b1s7")]
+position = Vector2(-626, 176)
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1570277561 groups=["SpawnPoint"]]
+position = Vector2(-625, 168)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1521653948]
+zoom = Vector2(5, 5)
+script = ExtResource("5_7yk6h")

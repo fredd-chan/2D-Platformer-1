@@ -41,6 +41,11 @@ scale = Vector2(0.9, 0.9)
 tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0)
 tile_set = SubResource("TileSet_4ysk7")
 
+[node name="WOver" type="Sprite2D" parent="." unique_id=492816629]
+position = Vector2(-8, -7.000003)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("3_fje78")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=457322314]
 script = ExtResource("5_ftsbe")
 
@@ -77,11 +82,6 @@ color = Color(4.813075e-08, 0.08876278, 0.17428493, 1)
 [node name="Player" parent="." unique_id=514404792 instance=ExtResource("4_fje78")]
 position = Vector2(519, -2)
 death_y = 200.0
-
-[node name="WOver" type="Sprite2D" parent="." unique_id=492816629]
-position = Vector2(-8, -7.000003)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("3_fje78")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=387684874 groups=["SpawnPoint"]]
 position = Vector2(520, -39)

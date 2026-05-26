@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://kvke7qlsopa7"]
+
+[ext_resource type="Texture2D" uid="uid://cvib6yl1y7g12" path="res://Added_Sprites/End.png" id="1_5j2cu"]
+[ext_resource type="Script" uid="uid://cpgj3isxf87yb" path="res://Scripts/end.gd" id="1_xmt8n"]
+[ext_resource type="AudioStream" uid="uid://barccohr6va7a" path="res://Audio/Menu.wav" id="3_ql4ve"]
+[ext_resource type="AudioStream" uid="uid://4crguxq4h7f6" path="res://Audio/Button Sound.wav" id="4_q5l5q"]
+
+[node name="Control" type="Control" unique_id=835839041]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xmt8n")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1126292268]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5j2cu")
+
+[node name="Quit" type="Button" parent="." unique_id=656755194]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Quit"
+
+[node name="Button" type="Button" parent="." unique_id=588765797]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Level Menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1874313995]
+stream = ExtResource("3_ql4ve")
+autoplay = true
+
+[node name="Audio" type="AudioStreamPlayer" parent="." unique_id=255919921]
+stream = ExtResource("4_q5l5q")
+
+[connection signal="mouse_entered" from="Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

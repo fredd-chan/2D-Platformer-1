@@ -1,15 +1,86 @@
-[gd_scene format=3 uid="uid://geywxgq86p7c"]
+[gd_scene format=3 uid="uid://btlm7g43ppg5w"]
 
-[ext_resource type="Script" uid="uid://dlkgvkewahlri" path="res://Scripts/ruins.gd" id="1_arfdv"]
+[ext_resource type="Script" uid="uid://51t0waahrkyi" path="res://Scripts/Ruin_Cam.gd" id="1_d10kc"]
+[ext_resource type="Texture2D" uid="uid://ddy6yxd42kgeq" path="res://Added_Sprites/Ruin_p.png" id="1_xsfj7"]
+[ext_resource type="Texture2D" uid="uid://csbop86y3g5e5" path="res://Added_Sprites/Ruin_BG.png" id="2_r163w"]
+[ext_resource type="Texture2D" uid="uid://bdnjve5g52v5q" path="res://Added_Sprites/Ruin_Ov.png" id="3_d10kc"]
+[ext_resource type="PackedScene" uid="uid://d055voyrwqpkw" path="res://Scenes/player_2.tscn" id="4_r163w"]
+[ext_resource type="PackedScene" uid="uid://d1syur7qrqgaw" path="res://Scenes/Watercave.tscn" id="6_c2t3v"]
+[ext_resource type="Script" uid="uid://c8f0evvelbngh" path="res://Scripts/stone_flag.gd" id="7_54puf"]
+[ext_resource type="PackedScene" uid="uid://dilc0vh5qi6wn" path="res://Scenes/Statue.tscn" id="7_c2t3v"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrinw"]
-size = Vector2(72.75, 72.5)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d10kc"]
+texture = ExtResource("1_xsfj7")
+0:0/size_in_atlas = Vector2i(75, 31)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-310.50568, -42.059258, 9.0828705, -41.90708, 9.0828705, -22.662197, -310.18704, -22.941414)
+0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-600.77826, 34.09349, -600.2785, -28.777395, -600.4584, 33.633583, -535.1403, 34.41212, -535.459, 50.34366, -600.77826, 126.49641)
+0:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(-458.19012, 22.302486, -372.93707, 21.942768, -373.11694, 37.0509, -458.19012, 36.871044)
+0:0/0/physics_layer_0/polygon_3/points = PackedVector2Array(248.37268, 2.2304153, 260.7993, 13.701122, 188.4701, 93.35881, 176.36212, 81.88811, 177.7536, 80.34613, 177.97021, 75.90038, 182.10696, 75.90038, 187.87961, 69.02234, 186.60342, 66.72759, 190.56033, 65.82829, 195.23666, 60.972107, 194.87694, 57.554794, 199.01369, 57.554794, 203.6982, 51.609356, 203.86987, 46.763268, 208.40121, 46.40007, 215.12088, 38.95704, 213.40237, 37.0509, 217.24438, 36.604946, 227.07166, 25.719799, 226.89178, 22.6622, 230.12924, 22.122623, 239.30203, 11.151242, 240.3812, 8.093643, 243.43878, 8.453361)
+0:0/0/physics_layer_0/polygon_4/points = PackedVector2Array(600.141, 69.780136, 600.09863, -8.992937, 599.73895, 70.144905, 430.62946, 70.09877, 429.9922, 83.48126, 600.45966, 198.18832)
 
-[node name="EndFlag" type="Area2D" unique_id=1961935802]
-script = ExtResource("1_arfdv")
+[sub_resource type="TileSet" id="TileSet_3dpwe"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_d10kc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=204751705]
-shape = SubResource("RectangleShape2D_wrinw")
+[node name="Node2D" type="Node2D" unique_id=2041142424]
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[node name="RuinBg" type="Sprite2D" parent="." unique_id=606972003]
+position = Vector2(8, 0)
+texture = ExtResource("2_r163w")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=88468793]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_3dpwe")
+
+[node name="Player" parent="." unique_id=514404792 instance=ExtResource("4_r163w")]
+position = Vector2(-577, 26)
+double_jump = true
+input_up = "climb_up_p2"
+input_down = "climb_down_p2"
+
+[node name="RuinOv" type="Sprite2D" parent="." unique_id=1602505420]
+position = Vector2(8, 0)
+texture = ExtResource("3_d10kc")
+
+[node name="Node" type="Node" parent="." unique_id=1435261436]
+
+[node name="ColorRect" type="ColorRect" parent="Node" unique_id=1801210808]
+offset_left = -893.0
+offset_top = 244.0
+offset_right = 911.0
+offset_bottom = 546.0
+color = Color(0.039215688, 0.101960786, 0.08235294, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Node" unique_id=1956841936]
+offset_left = -889.0
+offset_top = -552.0
+offset_right = 908.0
+offset_bottom = -250.0
+color = Color(0.039215688, 0.101960786, 0.08235294, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Node" unique_id=1769074718]
+offset_left = 606.0
+offset_top = -301.0
+offset_right = 907.0
+offset_bottom = 278.0
+color = Color(0.039215688, 0.101960786, 0.08235294, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Node" unique_id=1410575840]
+offset_left = -889.0
+offset_top = -266.0
+offset_right = -588.0
+offset_bottom = 313.0
+color = Color(0.039215688, 0.101960786, 0.08235294, 1)
+
+[node name="cave" parent="." unique_id=1961935802 instance=ExtResource("6_c2t3v")]
+position = Vector2(628, 30)
+script = ExtResource("7_54puf")
+scene_to_load = ExtResource("7_c2t3v")
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1703399688 groups=["SpawnPoint"]]
+position = Vector2(-575, 20)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=722879070]
+position = Vector2(-577, 26)
+script = ExtResource("1_d10kc")

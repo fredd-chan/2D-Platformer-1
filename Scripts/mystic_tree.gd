@@ -11,25 +11,24 @@ var current_line : int = 0
 var dialogue_active : bool = false
 var waiting_for_pluh : bool = false
 var player : Node2D
+var dialogue_done : bool = false
 
 var dialogue_lines = [
-	{"speaker": "???", "text": "...You made it."},
-	{"speaker": "???", "text": "I have waited a long time for someone like you."},
-	{"speaker": "Sprig", "text": "Who are you?"},
-	{"speaker": "???", "text": "I am what remains of this world's heart."},
+	{"speaker": "???", "text": "Welcome..."},
+	{"speaker": "???", "text": "I have witnessed your travels."},
+	{"speaker": "Sprig", "text": "What are you?"},
+	{"speaker": "???", "text": "I am the guardian tree."},
 	{"speaker": "???", "text": "You may call me the Guardian."},
-	{"speaker": "Sprig", "text": "The world... it's dying, isn't it?"},
+	{"speaker": "Sprig", "text": "The world... is it dying?"},
 	{"speaker": "Guardian", "text": "It is. But it is not too late."},
-	{"speaker": "Guardian", "text": "You and your companion carry something rare."},
-	{"speaker": "Guardian", "text": "The will to protect."},
+	{"speaker": "Guardian", "text": "You and your companion can save it."},
+	{"speaker": "Guardian", "text": "You have the ability to protect."},
 	{"speaker": "Guardian", "text": "Take this with you."},
-	{"speaker": "Guardian", "text": "It will shield you when the darkness closes in."},
-	{"speaker": "Sprig", "text": "We won't let you down."},
+	{"speaker": "Guardian", "text": "It will shield you when you call upon it."},
+	{"speaker": "Sprig", "text": "Thank you. We won't let you down."},
 	{"speaker": "Guardian", "text": "I know you won't."},
-	{"speaker": "Guardian", "text": "But Sprig... the road ahead is not kind."},
-	{"speaker": "Guardian", "text": "There will be moments you want to give up."},
-	{"speaker": "Guardian", "text": "Do not."},
-	{"speaker": "Guardian", "text": "The ones you fight for are counting on you."},
+	{"speaker": "Guardian", "text": "Goodluck, kind warrior."},
+	{"speaker": "Guardian", "text": "Steel your nerves and persevere."},
 	{"speaker": "Guardian", "text": "Now go. Your friend needs you."},
 ]
 
@@ -39,7 +38,7 @@ func _ready():
 	player = get_node_or_null("Player")
 
 func _process(_delta):
-	if not dialogue_active and not waiting_for_pluh and player:
+	if not dialogue_active and not waiting_for_pluh and not dialogue_done and player:
 		if player.global_position.x < -325: 
 			_start_dialogue()
 
@@ -69,6 +68,7 @@ func _show_line():
 
 func _finish_dialogue():
 	dialogue_active = false
+	dialogue_done = true
 	dialogue_box.visible = false
 	if player:
 		player.unfreeze()
@@ -83,4 +83,4 @@ func _transition_to_level_2():
 	dialogue_box.visible = false
 	var split_level = get_tree().root.get_node_or_null("SplitLevel")
 	if split_level:
-		split_level.load_scene_in_viewport1(level_2_scene)
+		split_level.transition_to_fullscreen(level_2_scene)
