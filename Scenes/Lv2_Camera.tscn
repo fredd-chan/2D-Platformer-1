@@ -23,7 +23,7 @@ render_target_update_mode = 4
 
 [node name="Node2D" parent="HBoxContainer/SubViewportContainer/SubViewport" unique_id=283656412 instance=ExtResource("2_cguo2")]
 
-[node name="watercave" parent="HBoxContainer/SubViewportContainer/SubViewport/Node2D" index="10" unique_id=1961935802]
+[node name="watercave" parent="HBoxContainer/SubViewportContainer/SubViewport/Node2D" index="9" unique_id=1961935802]
 scene_to_load = null
 
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer/SubViewport" unique_id=1214271037]

@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://becd4erh1u8g5"]
+
+[ext_resource type="Script" uid="uid://d3j5qtl1av7hq" path="res://Scripts/spider.gd" id="1_sgelx"]
+[ext_resource type="Texture2D" uid="uid://bd21ypyvw0a5m" path="res://Added_Sprites/spider-Recovered1.png" id="2_ddpmj"]
+[ext_resource type="Texture2D" uid="uid://bmu3p3jlw4l3t" path="res://Added_Sprites/spider-Recovered2.png" id="3_r8axb"]
+[ext_resource type="Texture2D" uid="uid://ti3hmm1kyn5m" path="res://Added_Sprites/spider-Recovered3.png" id="4_ivniq"]
+[ext_resource type="Texture2D" uid="uid://d3nlmgqciwqub" path="res://Added_Sprites/spider-Recovered4.png" id="5_te70n"]
+[ext_resource type="Texture2D" uid="uid://bdaohtiv2vl0k" path="res://Added_Sprites/spider-Recovered5.png" id="6_xj15v"]
+[ext_resource type="Texture2D" uid="uid://dvqoi4ylre5ux" path="res://Added_Sprites/spider-Recovered6.png" id="7_o770l"]
+[ext_resource type="Texture2D" uid="uid://dlyof1vev5y1p" path="res://Added_Sprites/spider-Recovered7.png" id="8_8s3o0"]
+[ext_resource type="Texture2D" uid="uid://5fa4d34ktcp5" path="res://Added_Sprites/spider-Recovered8.png" id="9_doe21"]
+[ext_resource type="Texture2D" uid="uid://dmwi8frig7ujq" path="res://Added_Sprites/spider-Recovered9.png" id="10_cmrst"]
+
+[sub_resource type="Animation" id="Animation_83e02"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_ddpmj")]
+}
+
+[sub_resource type="Animation" id="Animation_qcdvs"]
+resource_name = "Spider"
+length = 3.0666666
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.28094, 0.61, 0.89, 1.11, 1.33, 1.51, 1.7, 1.92, 2.0800364, 2.2313118, 2.3771844, 2.5014465, 2.647319, 2.787789, 2.9552727),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_ddpmj"), ExtResource("3_r8axb"), ExtResource("4_ivniq"), ExtResource("5_te70n"), ExtResource("6_xj15v"), ExtResource("7_o770l"), ExtResource("8_8s3o0"), ExtResource("9_doe21"), ExtResource("10_cmrst"), ExtResource("9_doe21"), ExtResource("8_8s3o0"), ExtResource("7_o770l"), ExtResource("6_xj15v"), ExtResource("5_te70n"), ExtResource("4_ivniq"), ExtResource("3_r8axb")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vixoy"]
+_data = {
+&"RESET": SubResource("Animation_83e02"),
+&"Spider": SubResource("Animation_qcdvs")
+}
+
+[node name="Spider" type="Node2D" unique_id=1278458757]
+script = ExtResource("1_sgelx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=178680108]
+texture = ExtResource("2_ddpmj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1851098294]
+libraries/ = SubResource("AnimationLibrary_vixoy")
+speed_scale = 0.667

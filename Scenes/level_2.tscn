@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://bn52gw8g3115i" path="res://Added_Sprites/Lever3.png" id="12_i6dbo"]
 [ext_resource type="Texture2D" uid="uid://e4vj2bkhfkow" path="res://Added_Sprites/Lever4.png" id="13_e2piv"]
 [ext_resource type="Texture2D" uid="uid://5hld6exfpvmf" path="res://Added_Sprites/Lever5.png" id="14_ijtdf"]
+[ext_resource type="PackedScene" uid="uid://dh5r0dmk5lkvy" path="res://Scenes/spider.tscn" id="18_fhuy1"]
+[ext_resource type="PackedScene" uid="uid://becd4erh1u8g5" path="res://Scenes/spider2.tscn" id="18_i6dbo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2g134"]
 size = Vector2(32, 23)
@@ -88,6 +90,7 @@ sources/0 = SubResource("TileSetAtlasSource_apq5t")
 [node name="Node2D" type="Node2D" unique_id=283656412]
 
 [node name="Lvl21" type="Sprite2D" parent="." unique_id=741373057]
+visible = false
 position = Vector2(9, -8)
 texture = ExtResource("1_yvrk7")
 
@@ -280,6 +283,12 @@ input_respawn = "respawn_p2"
 double_jump = true
 lock_x_on_ladder = true
 death_y = 1000.0
+
+[node name="Spider" parent="." unique_id=444899295 instance=ExtResource("18_fhuy1")]
+position = Vector2(-546, -278)
+
+[node name="Spider2" parent="." unique_id=1278458757 instance=ExtResource("18_i6dbo")]
+position = Vector2(-946, -56)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=828206578]
 tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0)
